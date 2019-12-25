@@ -1,0 +1,79 @@
+<div class='wrapper'>
+  <section class="collection-featured">
+    <div>
+      <img src="{{ section.settings.collection_image | img_url: '650x400' }} "
+        alt="{{ section.settings.collection_image.alt }}">
+      <div class='overlay'>
+        <h1 class="collection-text">{{ section.settings.collection_title | upcase }}</h1>
+        <button>
+          <a href="{{ section.settings.collection_link }}">{{ section.settings.collection_link_label }}</a>
+        </button>
+      </div>
+    </div>
+    <div>
+      <img src="{{ section.settings.collection_image_two | img_url: '650x400' }} "
+        alt="{{ section.settings.collection_image.alt }}">
+      <div class='overlay-two'>
+      <h1 class="collection-text">{{ section.settings.collection_title_two | upcase }}</h1>
+      <button>
+        <a href="{{ section.settings.collection_label_two }}">{{ section.settings.collection_link_two }}</a>
+      </button>
+    </div>
+</div>
+</section>
+</div>
+
+{% schema %}
+{
+"name": "Featured Collection Add",
+"settings": [
+{
+"id": "collection_title",
+"type": "text",
+"label": "Insert a title for this page"
+},
+{
+"id": "collection_image",
+"type": "image_picker",
+"label": "Insert an image for the section"
+},
+{
+"id": "collection_link",
+"type": "url",
+"label": "Select a button destination"
+},
+{
+"id": "collection_link_label",
+"type": "text",
+"label": "Insert the button"
+},
+{
+"id": "collection_title_two",
+"type": "text",
+"label": "Insert a title for this page"
+},
+{
+"id": "collection_image_two",
+"type": "image_picker",
+"label": "Insert an image for the section"
+},
+{
+"id": "collection_label_two",
+"type": "url",
+"label": "Select a button destination"
+},
+{
+"id": "collection_link_two",
+"type": "text",
+"label": "Insert the button"
+}
+],
+
+"presets": [
+{
+"name": "Featured One",
+"category": "Custom Content"
+}
+]
+}
+{% endschema %}

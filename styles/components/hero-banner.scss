@@ -1,0 +1,45 @@
+.hero-banner {
+  background-repeat: no-repeat;
+  height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  background-size: contain;
+  h1 {
+    margin: -45px auto 0 auto;
+    width: 33%;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+  }
+  button {
+    box-shadow: 4px 4px #d25100;
+    padding: 6px 15px;
+    background-color: #fff;
+    margin-top: 8px;
+    letter-spacing: 3px;
+  }
+}
+
+.hero-banner--article {
+  min-height: 278px;
+  object-position: 1000% 10%;
+  object-fit: cover;
+}
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left: auto; /* 1 */
+  max-width: 1280px; /* 2 */
+}
+
+//Media Queries
+@media only screen and (max-width: $md) {
+  .hero-banner {
+    h1 {
+      margin: -45px auto 0 auto;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,260 @@
+form {
+  margin-left: 50px !important;
+  margin-bottom: 50px;
+}
+
+.collection--all {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+aside {
+  border-right: #f4bd03 3px solid;
+  width: 20%;
+  height: 50%;
+  ul {
+    padding: 0;
+  }
+}
+
+.main {
+  width: 70%;
+}
+
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.items {
+  margin-left: 50px;
+  border: none;
+  a {
+    text-decoration: none;
+  }
+  p {
+    color: #d25100;
+    text-align: center;
+  }
+}
+
+#collection {
+  position: relative;
+  min-width: 100px;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 30%;
+    height: 50px;
+    margin: 5px 0px;
+    padding: 0px 15px;
+    font-size: 16pt;
+    line-height: 1.75;
+    color: #000;
+    background-color: #f4bd03;
+    border: none;
+    -ms-word-break: normal;
+    word-break: normal;
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  &::after {
+    content: "\f078";
+    font: normal normal normal 17px FontAwesome;
+    color: #000;
+    left: 365px;
+    top: 20px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+  }
+}
+//Collection Tags==============================
+.collection_tag a {
+  text-decoration: none;
+}
+.collection_tag__blue a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: blue;
+  display: block;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.collection_tag__black a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: black;
+  display: block;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+.collection_tag__orange a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: orange;
+  display: block;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.collection_tag__pink a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: palevioletred;
+  display: block;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.collection_tag__red a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: red;
+  display: block;
+  border-radius: 50%;
+}
+.collection_tag__yellow a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: #e3b651;
+  display: block;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.collection_tag__white a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: white;
+  display: block;
+  border-radius: 50%;
+  border: black solid 0.25px;
+  margin-left: 15px;
+}
+
+.collection_tag__purple a:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: purple;
+  display: block;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+.sidebar {
+  width: 220px;
+  li {
+    list-style-type: none;
+    text-transform: uppercase;
+    margin: 0 20px 25px 0px;
+    display: inline-block;
+  }
+}
+
+//========Collection Page
+.collection-banner {
+  text-align: center;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collection-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#Fall {
+  order: 2;
+}
+
+#Home {
+  order: 1;
+}
+
+#Wedd {
+  order: 3;
+}
+
+.collection-title--individual {
+  a {
+    text-decoration: none;
+    background-color: #d25100;
+    box-shadow: 4px 4px #fff;
+    color: #fff;
+    padding: 6px 15px;
+  }
+  margin-top: -120px;
+  font-weight: 900;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 14pt;
+  li {
+    background-color: black;
+    color: #f4bd03;
+    margin-right: 10px;
+    padding: 10px;
+    display: inline;
+    margin: 0 5px;
+   
+  }
+  a {
+    color: #f4bd03;
+    text-decoration: none;
+  }
+}
+
+.active-page{
+  background-color: #f4bd03!important;
+  color: black!important;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+//Breadcrumbs
+.arrow{ 
+  color: #f4bd03;
+  font-size: 12pt;
+  font-weight: bolder;
+}
+
+.breadcrumb {
+  margin-top: 30px
+}
+//Sort 
+.sort {
+  display:flex;
+}

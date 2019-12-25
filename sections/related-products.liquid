@@ -1,0 +1,54 @@
+<!-- We'll assign a variable here for the max amount of related products -->
+   {% assign break_at = 4 %}
+   {% assign product_id = product.id %}
+
+   <!-- Next we'll use a conditional that ensures this product is part of a collection -->
+   {% if product.collections %}
+
+      <!-- next, we will loop through the collections that this post is a part of -->
+      {% for collection in product.collections %}
+            
+      <!-- Display the related item section title -->
+            <h2>{{ section.settings.related_title }}</h2>
+            <!-- Then, we'll find a prduct in this collection and get the product info  -->
+            <div class='related-items'>
+            {% for product in collection.products %}
+
+            <!-- for each product, we'll create a new figure and grab it's image, title and price -->
+               {% unless product.id == product_id %}
+               <figure>
+                  <a href="{{product.url}}">
+                        <img src="{{ product | img_url: '400x400' }}" alt="{{product.featured_image.alt}}">
+                        <figcaption>
+                           <h3>{{product.title | upcase}}</h3>
+                           <h4>{{product.price | money_without_trailing_zeros}}</h4>
+                        </figcaption>
+                  </a>
+               </figure>
+               {% endunless %}
+               <!-- keep looping through unless you get to our break_at amount -->
+               {% assign counter = counter | plus: 1 %}
+               {% if counter == break_at %}
+                  {% break %}
+               {% endif %}
+            {% endfor %}
+            {% break %}
+         </div>
+      {% endfor %}
+   {%endif%}
+
+{% schema %}
+{
+  "name": "Related products",
+  "class" : "products-related",
+  "tag" : "section",
+  "settings": [
+      {
+         "id": "related_title",
+         "type": "text",
+         "label": "Section title",
+         "default": "Related Products"
+      }
+   ]
+}
+{% endschema %}

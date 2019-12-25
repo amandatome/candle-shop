@@ -1,0 +1,116 @@
+{% paginate collection.products by 4 %}
+<div class="wrapper">
+  <div role="banner">
+    {% section 'collection-banner' %}
+    {% include 'breadcrumbs' %}
+    {% if collection.description != blank %}
+      <div class="rte">
+        {{ collection.description }}
+      </div>
+    {% endif %}
+    </div>
+<div class="collection--all">
+  <aside>
+    {% if collection.all_tags.size > 0 %}
+    <div class="sidebar">
+      <h3>Filter By Color</h3>
+        <ul>
+          {% for tag in collection.all_tags %}
+            {% if current_tags contains tag %}
+              <li class="active collection_tag collection_tag__{{tag}}">
+                {{ tag | link_to_remove_tag: tag }}
+              </li>
+            {% else %}
+              <li class="active collection_tag collection_tag__{{tag}}">
+                {{ tag | link_to_tag: tag }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </aside>
+
+ <section class='main'>
+   <form id="collection">
+    {% include'sort-by'%}
+  </form>
+  <div class='main-section'>
+    {% for product in collection.products %}
+      <div class='items'>
+        {% if product.featured_image != blank %}
+          <a href="{{ product.url | within: collection }}">
+            {% include 'responsive-image' with
+              image: product.featured_image,
+              max_width: 500,
+              max_height: 600
+            %}
+          </a>
+        {% endif %}
+
+        <p>
+          <a href="{{ product.url | within: collection }}">{{ product.title | upcase }}</a>
+        </p>
+        <p>
+          {% if product.compare_at_price > product.price %}
+
+            {% if product.price_varies %}
+              {%- assign sale_price = product.price | money_without_trailing_zeros -%}
+              {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+            {% else %}
+              {{ 'products.product.on_sale' | t }}
+              {{ product.price | money_without_trailing_zeros }}
+            {% endif %}
+
+          {% else %}
+
+            {% if product.price_varies %}
+              {%- assign price = product.price | money_without_trailing_zeros -%}
+              {{ 'products.product.from_text_html' | t: price: price }}
+            {% else %}
+              {{ product.price | money_without_trailing_zeros}}
+            {% endif %}
+
+          {% endif %}
+
+          {% if product.compare_at_price > product.price %}
+            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+            <s>{{ product.compare_at_price | money_without_trailing_zeros }}</s>
+          {% endif %}
+
+          {% unless product.available %}
+            {{ 'products.product.sold_out' | t }}
+          {% endunless %}
+        </p>
+      </div>
+
+    {% else %}
+      {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
+        {% for i in (1..8) %}
+          <a href="#">
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+          </a>
+
+          <p>
+            <a href="#">{{ 'homepage.onboarding.product_title' | t }}</a>
+          </p>
+
+          <p>
+            {{ 1999 | money_without_trailing_zeros }}
+          </p>
+        {% endfor %}
+      {% else %}
+        <p>{{ 'collections.general.no_matches' | t }}</p>
+      {% endif %}
+
+    {% endfor %}
+ 
+</div>
+    {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+    {% endif %}
+</div>
+{% endpaginate %}
+</div>
+</section>

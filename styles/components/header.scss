@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    justify-content: space-evenly;
+    li {
+        list-style-type: none;
+        text-transform: uppercase;
+    }
+    .logo-image{
+        margin-left: 120px;
+    }
+}
+
+.cart {
+    margin-top: 5px!important;
+    text-transform: uppercase;
+}
+
+#top-nav {
+    ul {
+        display: none;
+    }
+    &:hover {
+       ul {
+            display: block;
+        }  
+    }
+}

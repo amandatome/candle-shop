@@ -1,0 +1,23 @@
+<section class="about-banner" style="background: linear-gradient(90deg, {{section.settings.about_banner_color_bg_left}} 50%, {{section.settings.about_banner_color_bg_right}} 50%);">
+    <h1>{{ page.title | upcase }}</h1> 
+   </section>
+   
+   {% schema %}
+   {
+     "name": "About Us Banner",
+     "settings": [
+       {
+         "id": "about_banner_color_bg_left",
+         "type": "color",
+         "label": "Pick a color for the left side",
+         "default": "#ffe2cf"
+         },
+         {
+         "id": "about_banner_color_bg_right",
+         "type": "color",
+         "label": "Pick a color for the right side",
+         "default": "#fbe8b1"
+         }
+     ]
+   }
+   {% endschema %}

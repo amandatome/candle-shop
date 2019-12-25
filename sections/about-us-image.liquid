@@ -1,0 +1,14 @@
+
+    <img src="{{ section.settings.about_us_page_image | img_url: '400x300' }} " alt="{{ section.settings.about_us_page_image.alt }}">
+   {% schema %}
+   {
+     "name": "About Us Image",
+     "settings": [
+     {
+      "id": "about_us_page_image",
+      "type": "image_picker",
+      "label": "Insert an image for the section"
+      }
+     ]
+   }
+   {% endschema %}

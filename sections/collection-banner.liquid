@@ -1,0 +1,23 @@
+<section class="collection-banner" style="background: linear-gradient(90deg, {{section.settings.collection_banner_color_bg_left}} 50%, {{section.settings.collection_banner_color_bg_right}} 50%);">
+    <h1>{{ collection.title }}</h1> 
+   </section>
+   
+   {% schema %}
+   {
+     "name": "Collection Banner",
+     "settings": [
+       {
+         "id": "collection_banner_color_bg_left",
+         "type": "color",
+         "label": "Pick a color for the left side",
+         "default": "#ffe2cf"
+         },
+         {
+         "id": "collection_banner_color_bg_right",
+         "type": "color",
+         "label": "Pick a color for the right side",
+         "default": "#fbe8b1"
+         }
+     ]
+   }
+   {% endschema %}

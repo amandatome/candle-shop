@@ -1,0 +1,40 @@
+.form-vertical {
+  display: block;
+  input[type=text], input[type=email],input[type=tel], label, textarea {
+    display: block;
+    border:none;
+    min-width: 400px;
+    margin-bottom: 10px
+  }
+  input[type=text], input[type=email],input[type=tel] {
+    border-bottom: solid #f4bd03;
+    margin-bottom: 20px;
+  }
+  textarea {
+    border: solid #f4bd03;
+    margin-top: 30px;
+    min-width: 550px;
+  }
+  .btn {
+    background-color: #d25100;
+    box-shadow: 4px 4px #f4bd03;
+    color: #fff;
+    padding: 10px 50px;
+  }
+}
+
+#ContactForm-message {
+  margin-top: 10px;
+}
+
+.location {
+  margin: 30px 0 0 70px;
+}
+
+.contact-us {
+  display: flex;
+  margin: 25px 0px
+}
+
+
+

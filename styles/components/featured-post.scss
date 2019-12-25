@@ -1,0 +1,37 @@
+.featured-post {
+  display:flex;
+  align-content: center;
+  padding: 50px;
+  margin: 50px 0px;
+  // margin: 50px;
+  img {
+    margin-left: 15px;
+    width: 100%;
+  }
+  h2 {
+    width: 400px;
+  }
+}
+
+.featured-post-text {
+  flex-direction: column;
+}
+
+#latest-post {
+  background: #d25100;
+  color: #fff;
+  width: 350px;
+  padding: 10px 0;
+  text-align: center
+}
+
+//Media Queries
+@media only screen and (max-width: $md){
+  .featured-post {
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 50px;
+    margin: 50px;
+  }
+}

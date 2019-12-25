@@ -1,0 +1,54 @@
+<div class='wrapper'>
+  <section class="hero-banner" style="background: linear-gradient(90deg, {{section.settings.banner_color_bg_left}} 50%, {{section.settings.banner_color_bg_right}} 50%);">
+  <img src="{{ section.settings.banner_image | img_url: 'large' }} " alt="{{ section.settings.banner_image.alt }}">
+  <h1 class="banner-text">{{ section.settings.banner_text | upcase }}</h1>
+  <button>
+  <a href="{{ section.settings.banner_link }}">{{ section.settings.banner_link_label }}</a>
+</button>
+</section>
+</div>
+{% schema %}
+  {
+    "name" : "Banner",
+    "settings": [
+        {
+        "id": "banner_text",
+        "type": "text",
+        "label": "Insert a title for this banner"
+        },
+        {
+        "id": "banner_image",
+        "type": "image_picker",
+        "label": "Insert an image for the section"
+        },
+        {
+        "id": "banner_link",
+        "type": "url",
+        "label": "Select a button destination"
+        },
+        {
+        "id": "banner_link_label",
+        "type": "text",
+        "label": "Insert the button"
+        },
+        {
+        "id": "banner_color_bg_left",
+        "type": "color",
+        "label": "Pick a color for the left side",
+        "default": "#ffe2cf"
+        },
+        {
+        "id": "banner_color_bg_right",
+        "type": "color",
+        "label": "Pick a color for the right side",
+        "default": "#fbe8b1"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Banner",
+        "category": "Custom Content"
+      }
+    ]
+  }
+{% endschema %}

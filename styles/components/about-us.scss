@@ -1,0 +1,62 @@
+.about {
+  display:flex;
+  align-content: center;
+  padding: 50px;
+  margin: 50px 0px;
+  img {
+    margin-right: 15px;
+  }
+}
+
+.about-text {
+  flex-direction: column;
+}
+
+// PAGE =================== 
+.about-banner {
+    text-align: center;
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-page {
+  margin: 0px 50px 75px 50px;
+  img {
+    float: right;
+    margin-top: 18px;
+    padding: 25px
+
+  }
+}
+
+.about-content {
+  width: 100%;
+  text-align: justify;
+  box-shadow: 0px 0rem 0.3px 0 rgba(0, 0, 0, .3), 6px 6px rgba(244, 189, 3, .7);
+  padding: 25px;
+  h2 {
+    text-transform: uppercase;
+    background-color: #d25100;
+    width: 27%;
+    color: #fff;
+    padding: 20px 25px;
+    text-align: center
+  }
+}
+
+
+//Media Queries
+@media only screen and (max-width: $md){
+  .about {
+    flex-direction: column;
+    align-content: center;
+    padding: 50px;
+    margin: 50px;
+    img {
+      margin-right: 15px;
+    }
+  }
+  
+}

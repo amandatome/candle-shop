@@ -1,0 +1,25 @@
+<div class="rte">
+    {{section.settings.map_address}}
+    {{ section.settings.map_area }}
+  </div>
+
+{% schema %}
+{
+  "name": "Contact Us Map",
+  "settings": [
+  {
+    "type": "text",
+    "id": "map_address",
+    "label": "Insert location address"
+  },
+    {
+      "type": "html",
+      "id": "map_area",
+      "label": "Insert map embed"
+    }
+  ]
+}
+
+
+
+{% endschema %}

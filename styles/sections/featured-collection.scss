@@ -1,0 +1,141 @@
+.collection-featured {
+  display: flex;
+  position: relative;
+  margin-top: 50px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 23%;
+  transform: translate(-30%, -50%);
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  button {
+    box-shadow: 4px 4px #fff;
+    padding: 6px 15px;
+    background-color: #d25100;
+    margin-top: 8px;
+    letter-spacing: 3px;
+    transform: translate(-50%, -50%);
+  }
+  h1 {
+    width: 70%;
+    word-break: normal;
+    text-align: center;
+  }
+}
+
+.overlay-two {
+  position: absolute;
+  top: 50%;
+  left: 73%;
+  transform: translate(-25%, -50%);
+  margin: 0;
+
+  a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+  }
+  button {
+    box-shadow: 4px 4px #fff;
+    padding: 6px 15px;
+    background-color: #f4bd03;
+    margin-top: 8px;
+    letter-spacing: 3px;
+    transform: translate(-35%, -50%);
+  }
+  h1 {
+    width: 70%;
+    word-break: normal;
+    text-align: center;
+  }
+}
+
+//Media Queries
+@media only screen and (max-width: $md) {
+  .collection-featured {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 5px;
+    img {
+      width: 800px;
+    }
+  }
+
+  .overlay {
+    top: 20%;
+    left: 40%;
+    margin: 0;
+    text-align: center;
+    button {
+      transform: translate(0%, 0%);
+    }
+    h1 {
+      width: 100%;
+    }
+  }
+
+  .overlay-two {
+    top: 75%;
+    left: 35%;
+    margin: 0;
+    text-align: center;
+    button {
+
+      transform: translate(0%, 0%);
+    }
+    h1 {
+      width: 100%;
+      word-break: normal;
+      text-align: center;
+    }
+  }
+}
+
+
+@media only screen and (max-width: $sm) {
+  .collection-featured {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 5px;
+    img {
+      width: 800px;
+    }
+  }
+
+  .overlay {
+    top: 20%;
+    left:35%;
+    margin: 0;
+    text-align: center;
+    button {
+      transform: translate(0%, 0%);
+    }
+    h1 {
+      width: 100%;
+    }
+  }
+
+  .overlay-two {
+    top: 75%;
+    left: 35%;
+    margin: 0;
+    text-align: center;
+    button {
+      transform: translate(0%, -55%);
+    }
+    h1 {
+      width: 100%;
+      word-break: normal;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<section class="featured-post" style="background: {{ section.settings.color_featured_post_bg }};">
+    
+    <div class="featured-post-text">
+      <h3 id='latest-post'>{{section.settings.featured_post_latest | upcase }}</h3>
+        {% assign article = articles[section.settings.featured_post] %}
+        {% if article %}
+          <h2><a href="{{ article.url }}">{{ article.title | upcase }}</a></h2>
+          <p>{{ article.excerpt_or_content }}</p>   
+  </div>
+      <img src="{{ article.image | img_url: '400x' }} " alt="{{ article.image.alt }}">
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Featured Post",
+  "settings": [
+        {
+        "id": "featured_post",
+        "type": "article",
+        "label": "Insert a title for this page"
+        },
+        {
+          "id": "featured_post_latest",
+          "type": "text",
+          "label": "Insert latest blog post"
+          },
+        
+        {
+          "type": "color",
+          "id": "color_featured_post_bg",
+          "label": "Background Color",
+          "default": "#fbe8b1"
+        }
+  ],
+  
+   "presets": [
+      {
+        "name": "Featured Post",
+        "category": "Custom Content"
+      }
+    ]
+}
+{% endschema %}
